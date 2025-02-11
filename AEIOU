@@ -1,0 +1,17 @@
+import sys, math, string
+
+cases = int(input().rstrip())
+
+for i in range(cases):
+    line = input().rstrip ()
+    
+    points = 0
+    
+    vowels = ["a", "e", "i", "o", "u"]
+    
+    for l in line:
+        if l in vowels:
+            points += 1
+    print(points)
+    
+
