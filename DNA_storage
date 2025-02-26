@@ -1,0 +1,46 @@
+import sys
+import string
+
+cases = int(sys.stdin.readline().rstrip())
+
+def binary_to_string(bits):
+    return ''.join([chr(int(i, 2)) for i in bits])
+
+for caseNum in range(cases):
+    line = sys.stdin.readline().rstrip().upper()
+
+    cuh = []
+    cuh2 = []
+    bits = []
+    bits2 = []
+    ans = []
+    
+    
+    for i in line:
+        cuh.append(i)
+        
+    for j in range(0, len(cuh), 7):
+        cuh2.append(cuh[j:j + 7])
+        
+    for g in range(len(cuh2)):
+        for h in cuh2[g]:
+            if h == "A" or h == "T":
+                bits.append("0")
+            elif h == "G" or h == "C":
+                bits.append("1")
+                
+    for j in range(0, len(bits), 7):
+        bits2.append(bits[j:j + 7])
+        
+    s = ""
+    for k in range(len(bits2)):
+        skib = s.join(bits2[k])
+        decimal_val = int(skib, 2)
+        ascii_char = chr(decimal_val)
+        ans.append(ascii_char)
+        n = s.join(ans)
+        
+    print(n)
+    
+                
+
